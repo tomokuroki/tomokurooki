@@ -5,6 +5,7 @@ export const translations = {
       stack: "技术栈",
       work: "作品集",
       info: "信息",
+      learn: "学中文",
     },
     hero: {
       kicker: "作品集 / 2026",
@@ -66,6 +67,27 @@ export const translations = {
         { desc: "Docker 容器化的 Tor 洋葱服务全栈环境。" }
       ]
     },
+    learn: {
+      title: "学习\n中文",
+      desc: "从 HSK 1 到 HSK 6 掌握中文。点击下方开始你的语言之旅。",
+      btn: "进入课程",
+      back: "返回首页",
+      hsk1: "HSK 1",
+      hsk2: "HSK 2",
+      hsk3: "HSK 3",
+      hsk4: "HSK 4",
+      hsk5: "HSK 5",
+      hsk6: "HSK 6",
+      comingSoon: "敬请期待",
+      levelDesc: "为初学者准备的 150 个基础词汇。",
+      vocab: "词汇表",
+      tableHeaders: {
+        char: "汉字",
+        pinyin: "拼音",
+        tone: "声调",
+        meaning: "含义"
+      }
+    },
     info: {
       title: "信息",
       location: "常驻地",
@@ -83,6 +105,7 @@ export const translations = {
       stack: "Stack",
       work: "Work",
       info: "Info",
+      learn: "Learn",
     },
     hero: {
       kicker: "Portfolio / 2026",
@@ -144,6 +167,27 @@ export const translations = {
         { desc: "Hidden Tor service stack, fully containerized with Docker." }
       ]
     },
+    learn: {
+      title: "Learn\nChinese",
+      desc: "Master Chinese from HSK 1 to HSK 6. Start your journey here.",
+      btn: "Go to course",
+      back: "Back to Home",
+      hsk1: "HSK 1",
+      hsk2: "HSK 2",
+      hsk3: "HSK 3",
+      hsk4: "HSK 4",
+      hsk5: "HSK 5",
+      hsk6: "HSK 6",
+      comingSoon: "Coming soon",
+      levelDesc: "150 basic words for beginners.",
+      vocab: "Vocabulary",
+      tableHeaders: {
+        char: "Character",
+        pinyin: "Pinyin",
+        tone: "Tone",
+        meaning: "Meaning"
+      }
+    },
     info: {
       title: "Information",
       location: "Location",
@@ -161,6 +205,7 @@ export const translations = {
       stack: "Стек",
       work: "Проекты",
       info: "Инфо",
+      learn: "Кит. яз",
     },
     hero: {
       kicker: "Портфолио / 2026",
@@ -221,6 +266,27 @@ export const translations = {
         { desc: "Десктопное приложение на Python, имитирующее естественный процесс цифрового рисования." },
         { desc: "Скрытый сервис Tor, полностью контейнеризированный в Docker." }
       ]
+    },
+    learn: {
+      title: "Учим\nКитайский",
+      desc: "Освойте китайский язык с HSK 1 по HSK 6. Начните свое обучение здесь.",
+      btn: "Перейти к курсу",
+      back: "На главную",
+      hsk1: "HSK 1",
+      hsk2: "HSK 2",
+      hsk3: "HSK 3",
+      hsk4: "HSK 4",
+      hsk5: "HSK 5",
+      hsk6: "HSK 6",
+      comingSoon: "Скоро",
+      levelDesc: "150 базовых слов для начинающих.",
+      vocab: "Словарь",
+      tableHeaders: {
+        char: "Иероглиф",
+        pinyin: "Pinyin",
+        tone: "Тон",
+        meaning: "Значение"
+      }
     },
     info: {
       title: "Информация",

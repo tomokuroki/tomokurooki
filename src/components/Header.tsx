@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLanguage, Language } from '../i18n/LanguageContext';
 
-export function Header() {
+export function Header({ onNavigate }: { onNavigate?: (page: 'home' | 'hsk') => void }) {
   const [scrolled, setScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
@@ -34,13 +34,13 @@ export function Header() {
       />
 
       <div className="relative max-w-[1400px] mx-auto px-5 md:px-10 flex justify-between items-center text-[12px] md:text-[14px] tracking-[0.02em] uppercase">
-        <a href="#top" className="text-white no-underline font-bold">tomokuroki</a>
+        <a href="#top" onClick={() => onNavigate?.('home')} className="text-white no-underline font-bold">tomokuroki</a>
         <div className="flex items-center gap-6 md:gap-12">
           <nav className="flex gap-3 sm:gap-4 md:gap-9 text-[11px] sm:text-[12px] md:text-[14px]">
-            <a href="#about" className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.about}</a>
-            <a href="#stack" className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.stack}</a>
-            <a href="#work" className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.work}</a>
-            <a href="#info" className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.info}</a>
+            <a href="#about" onClick={() => onNavigate?.('home')} className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.about}</a>
+            <a href="#stack" onClick={() => onNavigate?.('home')} className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.stack}</a>
+            <a href="#work" onClick={() => onNavigate?.('home')} className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.work}</a>
+            <a href="#info" onClick={() => onNavigate?.('home')} className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.info}</a>
           </nav>
           <div className="flex gap-2 text-[10px] md:text-[12px]">
             <button 

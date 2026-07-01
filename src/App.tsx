@@ -8,14 +8,20 @@ import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Stack } from './components/Stack';
 import { Work } from './components/Work';
+import { LearnSection } from './components/LearnSection';
 import { Info } from './components/Info';
 import { Footer } from './components/Footer';
-import { useEffect } from 'react';
+import { HSKPage } from './components/HSKPage';
+import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import { LanguageProvider } from './i18n/LanguageContext';
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState<'home' | 'hsk'>('home');
+
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as any });
+    
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -26,12 +32,16 @@ export default function App() {
       touchMultiplier: 2,
     });
 
+    // Ensure we start at top when component/page updates
+    lenis.scrollTo(0, { immediate: true });
+
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     // Handle anchor links
     const handleAnchorClick = (e: MouseEvent) => {
@@ -47,23 +57,32 @@ export default function App() {
 
     return () => {
       lenis.destroy();
+      cancelAnimationFrame(rafId);
       document.removeEventListener('click', handleAnchorClick);
     };
-  }, []);
+  }, [currentPage]);
 
   return (
     <LanguageProvider>
       <div id="top" className="min-h-screen">
-        <Header />
+        <Header onNavigate={setCurrentPage} />
         <main>
-          <Hero />
-          <About />
-          <Stack />
-          <Work />
-          <Info />
+          {currentPage === 'home' ? (
+            <>
+              <Hero />
+              <About />
+              <Stack />
+              <Work />
+              <LearnSection onNavigate={setCurrentPage} />
+              <Info />
+            </>
+          ) : (
+            <HSKPage onBack={() => setCurrentPage('home')} />
+          )}
         </main>
         <Footer />
       </div>
     </LanguageProvider>
   );
 }
+
