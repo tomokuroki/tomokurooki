@@ -20,7 +20,13 @@ export const translations = {
         locationLabel: "常驻 ",
         location: "深圳"
       },
-      desc: "我致力于构建高性能后端、系统工具、微服务和跨平台应用。不断探索前沿技术。"
+      desc: "我致力于构建高性能后端、系统工具、微服务和跨平台应用。不断探索前沿技术。",
+      video: {
+        on: "开",
+        off: "关",
+        muted: "静音",
+        unmuted: "有声"
+      }
     },
     about: {
       title: "$ whoami",
@@ -120,7 +126,13 @@ export const translations = {
         locationLabel: "based in ",
         location: "Shenzhen"
       },
-      desc: "I build fast backends, system tools, microservices and cross-platform apps. Always experimenting."
+      desc: "I build fast backends, system tools, microservices and cross-platform apps. Always experimenting.",
+      video: {
+        on: "ON",
+        off: "OFF",
+        muted: "MUTED",
+        unmuted: "UNMUTED"
+      }
     },
     about: {
       title: "$ whoami",
@@ -220,7 +232,13 @@ export const translations = {
         locationLabel: "локация ",
         location: "Шэньчжэнь"
       },
-      desc: "Я создаю быстрые бэкенды, системные утилиты, микросервисы и кроссплатформенные приложения. Постоянно экспериментирую."
+      desc: "Я создаю быстрые бэкенды, системные утилиты, микросервисы и кроссплатформенные приложения. Постоянно экспериментирую.",
+      video: {
+        on: "ВКЛ",
+        off: "ВЫКЛ",
+        muted: "БЕЗ ЗВУКА",
+        unmuted: "ЗВУК"
+      }
     },
     about: {
       title: "$ whoami",
