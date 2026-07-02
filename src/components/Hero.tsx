@@ -1,12 +1,43 @@
 import { FadeIn } from './FadeIn';
 import { useLanguage } from '../i18n/LanguageContext';
+import { useState, useRef } from 'react';
+import { Volume2, VolumeX, Video, VideoOff } from 'lucide-react';
 
 export function Hero() {
   const { t } = useLanguage();
+  const [isMuted, setIsMuted] = useState(true);
+  const [isVideoVisible, setIsVideoVisible] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const toggleVideo = () => {
+    setIsVideoVisible(!isVideoVisible);
+  };
 
   return (
-    <section className="min-h-screen flex flex-col justify-end pt-40 pb-20 border-b border-line">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10 w-full">
+    <section className="relative min-h-screen flex flex-col justify-end pt-40 pb-20 border-b border-line overflow-hidden">
+      {/* Background Video */}
+      <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isVideoVisible ? 'opacity-40' : 'opacity-0'}`}>
+        <video 
+          ref={videoRef}
+          autoPlay 
+          loop 
+          muted={isMuted} 
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="https://raw.githubusercontent.com/tomokuroki/web-assets/main/tomokurooki/oEfGDneG4QTEjcUI1gkuqheoGCLAJIBBLgJ7IA.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-[#050505]/20 pointer-events-none" />
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10 w-full relative z-10">
         <FadeIn className="text-[13px] tracking-[0.2em] uppercase text-muted mb-10">
           {t.hero.kicker}
         </FadeIn>
@@ -25,6 +56,28 @@ export function Hero() {
             {t.hero.desc}
           </div>
         </FadeIn>
+      </div>
+
+      {/* Video Controls */}
+      <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20 flex items-center gap-3">
+        <button 
+          onClick={toggleVideo}
+          className="flex items-center gap-2 px-4 py-2 rounded-[10px] bg-[#050505] hover:bg-[#111] transition-colors border border-line text-white/70 hover:text-white"
+          title={isVideoVisible ? "Hide video" : "Show video"}
+        >
+          {isVideoVisible ? <Video size={14} /> : <VideoOff size={14} />}
+          <span className="hidden md:inline text-[13px] font-medium tracking-tight">{isVideoVisible ? 'ON' : 'OFF'}</span>
+        </button>
+        <button 
+          onClick={toggleMute}
+          className={`flex items-center gap-2 px-4 py-2 rounded-[10px] transition-colors border border-line text-white/70 hover:text-white ${!isMuted ? 'bg-[#111]' : 'bg-[#050505] hover:bg-[#111]'}`}
+          title={isMuted ? "Unmute video" : "Mute video"}
+          disabled={!isVideoVisible}
+          style={{ opacity: isVideoVisible ? 1 : 0.5 }}
+        >
+          {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
+          <span className="hidden md:inline text-[13px] font-medium tracking-tight">{isMuted ? 'MUTED' : 'UNMUTED'}</span>
+        </button>
       </div>
     </section>
   );
