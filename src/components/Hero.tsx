@@ -66,7 +66,7 @@ export function Hero() {
           title={isVideoVisible ? "Hide video" : "Show video"}
         >
           {isVideoVisible ? <Video size={14} /> : <VideoOff size={14} />}
-          <span className="hidden md:inline text-[13px] font-medium tracking-tight">{isVideoVisible ? 'ON' : 'OFF'}</span>
+          <span className="hidden md:inline text-[13px] font-medium tracking-tight">{isVideoVisible ? t.hero.video?.on || 'ON' : t.hero.video?.off || 'OFF'}</span>
         </button>
         <button 
           onClick={toggleMute}
@@ -76,7 +76,7 @@ export function Hero() {
           style={{ opacity: isVideoVisible ? 1 : 0.5 }}
         >
           {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
-          <span className="hidden md:inline text-[13px] font-medium tracking-tight">{isMuted ? 'MUTED' : 'UNMUTED'}</span>
+          <span className="hidden md:inline text-[13px] font-medium tracking-tight">{isMuted ? t.hero.video?.muted || 'MUTED' : t.hero.video?.unmuted || 'UNMUTED'}</span>
         </button>
       </div>
     </section>
