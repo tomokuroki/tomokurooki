@@ -47,6 +47,7 @@ export function Header() {
             <a href="/#stack" onClick={(event) => { event.preventDefault(); goToSection('stack'); }} className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.stack}</a>
             <a href="/#work" onClick={(event) => { event.preventDefault(); goToSection('work'); }} className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.work}</a>
             <a href="/#info" onClick={(event) => { event.preventDefault(); goToSection('info'); }} className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.info}</a>
+            <button onClick={() => navigate('/app')} className="text-white opacity-70 hover:opacity-100 transition-opacity">{t.nav.app}</button>
           </nav>
           <div className="flex gap-2 text-[10px] md:text-[12px]">
             <button 

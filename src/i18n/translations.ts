@@ -6,6 +6,7 @@ export const translations = {
       work: "作品集",
       info: "信息",
       learn: "学中文",
+      app: "写汉字",
     },
     hero: {
       kicker: "作品集 / 2026",
@@ -97,6 +98,23 @@ export const translations = {
         meaning: "含义"
       }
     },
+    app: {
+      back: "返回首页",
+      kicker: "移动应用 / 练习汉字",
+      title: "写好\n每一个字。",
+      description: "用手写笔在 Android 手机或平板上描摹汉字、查词典，并在安静的练习节奏中记住它们。",
+      android: "下载 APK",
+      play: "Google Play",
+      comingSoon: "应用即将上线",
+      screenshotAlt: "汉字练习应用界面",
+      featuresLabel: "功能",
+      features: {
+        trace: { title: "描摹练习", text: "按照正确的笔顺，在模板上书写每一个笔画。" },
+        learn: { title: "学习进度", text: "每天练习一点，逐步建立自己的汉字词库。" },
+        dictionary: { title: "汉字词典", text: "按拼音、含义或汉字快速查找你需要的内容。" },
+        devices: { title: "Android 设备", text: "为手机和平板优化，支持使用触控笔书写。" }
+      }
+    },
     info: {
       title: "信息",
       location: "常驻地",
@@ -115,6 +133,7 @@ export const translations = {
       work: "Work",
       info: "Info",
       learn: "Learn",
+      app: "Write Hanzi",
     },
     hero: {
       kicker: "Portfolio / 2026",
@@ -206,6 +225,23 @@ export const translations = {
         meaning: "Meaning"
       }
     },
+    app: {
+      back: "Back to Home",
+      kicker: "Mobile app / Hanzi practice",
+      title: "Write\nbetter\ncharacters.",
+      description: "Trace Chinese characters with a stylus on your Android phone or tablet, look them up in the dictionary, and remember them through calm, focused practice.",
+      android: "Download APK",
+      play: "Google Play",
+      comingSoon: "App coming soon",
+      screenshotAlt: "Chinese character practice app interface",
+      featuresLabel: "Features",
+      features: {
+        trace: { title: "Trace practice", text: "Follow the correct stroke order and write every line on the guide." },
+        learn: { title: "Learning progress", text: "Practice a little every day and build your own character vocabulary." },
+        dictionary: { title: "Character dictionary", text: "Find what you need by pinyin, meaning, or the character itself." },
+        devices: { title: "Android devices", text: "Optimized for phones and tablets, with stylus support." }
+      }
+    },
     info: {
       title: "Information",
       location: "Location",
@@ -224,6 +260,7 @@ export const translations = {
       work: "Проекты",
       info: "Инфо",
       learn: "Кит. яз",
+      app: "Писать иероглифы",
     },
     hero: {
       kicker: "Портфолио / 2026",
@@ -313,6 +350,23 @@ export const translations = {
         pinyin: "Pinyin",
         tone: "Тон",
         meaning: "Значение"
+      }
+    },
+    app: {
+      back: "На главную",
+      kicker: "Мобильное приложение / практика",
+      title: "Пиши\nкаждый\nиероглиф.",
+      description: "Обводите китайские иероглифы стилусом на Android-смартфоне или планшете, ищите их в словаре и запоминайте в спокойном ритме.",
+      android: "Скачать APK",
+      play: "Google Play",
+      comingSoon: "Приложение скоро появится",
+      screenshotAlt: "Экран приложения для практики иероглифов",
+      featuresLabel: "Возможности",
+      features: {
+        trace: { title: "Обводка", text: "Следуйте правильному порядку черт и прописывайте каждый элемент по шаблону." },
+        learn: { title: "Прогресс обучения", text: "Занимайтесь понемногу каждый день и собирайте свой словарь иероглифов." },
+        dictionary: { title: "Словарь", text: "Ищите нужный иероглиф по пиньиню, значению или написанию." },
+        devices: { title: "Android-устройства", text: "Оптимизировано для телефонов и планшетов, есть поддержка стилуса." }
       }
     },
     info: {

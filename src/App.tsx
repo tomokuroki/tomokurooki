@@ -12,6 +12,7 @@ import { LearnSection } from './components/LearnSection';
 import { Info } from './components/Info';
 import { Footer } from './components/Footer';
 import { HSKPage } from './components/HSKPage';
+import { DownloadPage } from './components/DownloadPage';
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { LanguageProvider } from './i18n/LanguageContext';
@@ -80,6 +81,7 @@ function AppContent() {
           } />
           <Route path="/learn/chinese" element={<HSKPage />} />
           <Route path="/learn/chinese/:level" element={<HSKPage />} />
+          <Route path="/app" element={<DownloadPage />} />
         </Routes>
       </main>
       <Footer />
