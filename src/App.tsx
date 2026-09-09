@@ -12,13 +12,14 @@ import { LearnSection } from './components/LearnSection';
 import { Info } from './components/Info';
 import { Footer } from './components/Footer';
 import { HSKPage } from './components/HSKPage';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { LanguageProvider } from './i18n/LanguageContext';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'hsk'>('home');
-
+function AppContent() {
+  const location = useLocation();
+  
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' as any });
     
@@ -60,29 +61,38 @@ export default function App() {
       cancelAnimationFrame(rafId);
       document.removeEventListener('click', handleAnchorClick);
     };
-  }, [currentPage]);
+  }, [location.pathname]);
 
   return (
-    <LanguageProvider>
-      <div id="top" className="min-h-screen">
-        <Header onNavigate={setCurrentPage} />
-        <main>
-          {currentPage === 'home' ? (
+    <div id="top" className="min-h-screen">
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={
             <>
               <Hero />
               <About />
               <Stack />
               <Work />
-              <LearnSection onNavigate={setCurrentPage} />
+              <LearnSection />
               <Info />
             </>
-          ) : (
-            <HSKPage onBack={() => setCurrentPage('home')} />
-          )}
-        </main>
-        <Footer />
-      </div>
-    </LanguageProvider>
+          } />
+          <Route path="/learn/chinese" element={<HSKPage />} />
+          <Route path="/learn/chinese/:level" element={<HSKPage />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
+export default function App() {
+  return (
+    <BrowserRouter>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </BrowserRouter>
+  );
+}

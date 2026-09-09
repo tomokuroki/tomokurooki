@@ -1,7 +1,8 @@
 import { FadeIn } from './FadeIn';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Link } from 'react-router-dom';
 
-export function LearnSection({ onNavigate }: { onNavigate: (page: 'home' | 'hsk') => void }) {
+export function LearnSection() {
   const { t } = useLanguage();
 
   return (
@@ -15,8 +16,8 @@ export function LearnSection({ onNavigate }: { onNavigate: (page: 'home' | 'hsk'
         </FadeIn>
 
         <FadeIn>
-          <button 
-            onClick={() => onNavigate('hsk')}
+          <Link 
+            to="/learn/chinese"
             className="w-full text-left group grid grid-cols-[30px_1fr_auto] sm:grid-cols-[40px_1fr_auto] md:grid-cols-[60px_1.2fr_1fr_120px] items-center gap-3 sm:gap-4 md:gap-8 py-5 sm:py-7 md:py-11 border-t border-line transition-all duration-550 ease-[cubic-bezier(0.2,0.7,0.2,1)] hover:md:translate-x-[18px] hover:text-white"
           >
             <div className="font-mono text-[12px] md:text-[13px] text-muted">CH</div>
@@ -29,7 +30,7 @@ export function LearnSection({ onNavigate }: { onNavigate: (page: 'home' | 'hsk'
             <div className="font-mono text-[12px] text-muted text-right">
               {t.learn.btn}
             </div>
-          </button>
+          </Link>
         </FadeIn>
       </div>
     </section>

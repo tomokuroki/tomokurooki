@@ -87,6 +87,9 @@ export const translations = {
       comingSoon: "敬请期待",
       levelDesc: "为初学者准备的 150 个基础词汇。",
       vocab: "词汇表",
+      pdfDescription: "在页面中直接阅读该级别的俄语词汇 PDF，或下载到设备。",
+      download: "下载 PDF",
+      open: "新窗口打开",
       tableHeaders: {
         char: "汉字",
         pinyin: "拼音",
@@ -193,6 +196,9 @@ export const translations = {
       comingSoon: "Coming soon",
       levelDesc: "150 basic words for beginners.",
       vocab: "Vocabulary",
+      pdfDescription: "Read the Russian vocabulary PDF here or download it to your device.",
+      download: "Download PDF",
+      open: "Open in new tab",
       tableHeaders: {
         char: "Character",
         pinyin: "Pinyin",
@@ -299,6 +305,9 @@ export const translations = {
       comingSoon: "Скоро",
       levelDesc: "150 базовых слов для начинающих.",
       vocab: "Словарь",
+      pdfDescription: "Читайте PDF со словарём на русском прямо на сайте или скачайте его на устройство.",
+      download: "Скачать PDF",
+      open: "Открыть в новой вкладке",
       tableHeaders: {
         char: "Иероглиф",
         pinyin: "Pinyin",
